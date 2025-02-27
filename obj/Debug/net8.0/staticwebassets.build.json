@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "j1xDJbn3Dig0v4ricqFBWkdzTYLH7P9ZAdZ31OxwVpU=",
+  "Hash": "NZKfGorfXRh5vgQncv+3suR+zmxOoiGYhopOg4pL/cI=",
   "Source": "cd-ci-web",
   "BasePath": "_content/cd-ci-web",
   "Mode": "Default",
@@ -72,6 +72,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\Allievo\\Documents\\cd-ci-web\\wwwroot\\data\\prodotti.json",
+      "SourceId": "cd-ci-web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Allievo\\Documents\\cd-ci-web\\wwwroot\\",
+      "BasePath": "_content/cd-ci-web",
+      "RelativePath": "data/prodotti.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\data\\prodotti.json"
     },
     {
       "Identity": "C:\\Users\\Allievo\\Documents\\cd-ci-web\\wwwroot\\favicon.ico",

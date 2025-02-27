@@ -1,19 +1,20 @@
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-
-namespace cd_ci_web.Pages;
+using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.IO;
+using System.Threading.Tasks;
 
 public class IndexModel : PageModel
 {
-    private readonly ILogger<IndexModel> _logger;
+    public List<Prodotto> Prodotti { get; set; } = new();
 
-    public IndexModel(ILogger<IndexModel> logger)
+    public async Task OnGet()
     {
-        _logger = logger;
-    }
-
-    public void OnGet()
-    {
-
+        var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/data/prodotti.json");
+        if (System.IO.File.Exists(filePath))
+        {
+            var json = await System.IO.File.ReadAllTextAsync(filePath);
+            Prodotti = JsonConvert.DeserializeObject<List<Prodotto>>(json) ?? new List<Prodotto>();
+        }
     }
 }

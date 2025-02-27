@@ -1,11 +1,9 @@
 ﻿@page
 @model IndexModel
-@{
-    ViewData["Title"] = "Home page";
-}
-
-<div class="text-center">
-    <h1 class="display-4">Benvenuto</h1>
-    <p>cd-ci webapp</p>
-    <p>cd-ci webapp</p>
-</div>
+<h1>Lista Prodotti</h1>
+<ul>
+    @foreach (var prodotto in Model.Prodotti)
+    {
+        <li>@prodotto.Nome - €@prodotto.Prezzo</li>
+    }
+</ul>

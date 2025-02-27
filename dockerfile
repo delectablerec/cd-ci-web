@@ -4,17 +4,26 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /app
 COPY *.csproj ./
 
-RUN dotnet restore
-
+# RUN dotnet restore
 COPY . ./
 
-RUN dotnet publish -c Release -o out --no-restore
+# RUN dotnet publish -c Release -o out --no-restore
+
+# oppure con restore assieme al run concatenato con &&
+RUN dotnet restore && dotnet publish -c Release -o out
 
 # Fase 2: Creazione dell'immagine finale leggera
 
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
 WORKDIR /app
 COPY --from=build app/out ./
+
+# Creazione della cartella per i files json
+# l attributo -p permette di creare anche le cartelle genitore cioe la cartella database
+RUN mkdir -p /app/data
+
+# Definizione del volume per i files json
+VOLUME ["/app/data"]
 
 EXPOSE 8080
 

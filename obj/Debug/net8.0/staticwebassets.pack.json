@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
+      "Id": "C:\\Users\\Allievo\\Documents\\cd-ci-web\\wwwroot\\data\\prodotti.json",
+      "PackagePath": "staticwebassets\\data\\prodotti.json"
+    },
+    {
       "Id": "C:\\Users\\Allievo\\Documents\\cd-ci-web\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },

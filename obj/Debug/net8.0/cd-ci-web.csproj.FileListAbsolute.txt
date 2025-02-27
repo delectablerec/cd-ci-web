@@ -29,3 +29,6 @@ C:\Users\Allievo\Documents\cd-ci-web\obj\Debug\net8.0\refint\cd-ci-web.dll
 C:\Users\Allievo\Documents\cd-ci-web\obj\Debug\net8.0\cd-ci-web.pdb
 C:\Users\Allievo\Documents\cd-ci-web\obj\Debug\net8.0\cd-ci-web.genruntimeconfig.cache
 C:\Users\Allievo\Documents\cd-ci-web\obj\Debug\net8.0\ref\cd-ci-web.dll
+C:\Users\Allievo\Documents\cd-ci-web\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\Allievo\Documents\cd-ci-web\obj\Debug\net8.0\cd-ci-web.csproj.AssemblyReference.cache
+C:\Users\Allievo\Documents\cd-ci-web\obj\Debug\net8.0\cd-ci-web.csproj.CopyComplete
