@@ -1,0 +1,15 @@
+@page
+@model DeleteProdottoModel
+<h1>Lista Prodotti</h1>
+<ul>
+    @foreach (var prodotto in Model.Prodotti)
+    {
+        <li>@prodotto.Id - @prodotto.Nome - €@prodotto.Prezzo</li>
+    }
+</ul>
+<form method="post">
+    <label for="ProdottoId">ID Prodotto da eliminare:</label>
+    <input type="number" asp-for="ProdottoId" required />
+
+    <button type="submit">Elimina Prodotto</button>
+</form>
