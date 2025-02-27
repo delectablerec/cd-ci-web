@@ -17,7 +17,7 @@ jobs:
 
       - name: Build and Push Docker Image
         run: | # Esegue i comandi shell | permette di scrivere più comandi su più righe
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/cd-ci-web -f cd-ci-web/dockerfile cd-ci-web
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/cd-ci-web -f dockerfile .
           docker tag ${{ secrets.DOCKER_USERNAME }}/cd-ci-web ${{ secrets.DOCKER_USERNAME }}/cd-ci-web:latest
           docker push ${{ secrets.DOCKER_USERNAME }}/cd-ci-web:latest
 
