@@ -18,6 +18,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Allievo\Documents\cd-ci-web
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Allievo/Documents/cd-ci-web/Pages/AggiungiProdotto.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWdnaXVuZ2lQcm9kb3R0by5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Allievo/Documents/cd-ci-web/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
