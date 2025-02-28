@@ -15,7 +15,7 @@ public class IndexModel : PageModel
     public async Task OnGet()
     {
         fileLocal = Environment.GetEnvironmentVariable("PRODOTTI_JSON_PATH") ?? "./wwwroot/data/prodotti.json";
-        fileImage = Environment.GetEnvironmentVariable("PRODOTTI_APP_PATH") ?? "/app/data/prodotti.json";
+        fileImage = Environment.GetEnvironmentVariable("PRODOTTI_APP_PATH") ?? "Sconosciuto";
         Ambiente = Environment.GetEnvironmentVariable("DOTNET_ENVIRONMENT") ?? "Development";
         ultimoAggiornamento = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
 
