@@ -10,10 +10,10 @@ COPY . ./
 # ENV APP_DATA_PATH=/app/data
 
 # Definizione della variabile d'ambiente per il path del file json
-ENV PRODOTTI_JSON_PATH=/app/data/prodotti.json
+# ENV PRODOTTI_JSON_PATH=/app/data/prodotti.json
 
 # Definizione della variabile d'ambiente per l'ambiente di esecuzione Development, Staging, Production
-ENV DOTNET_ENVIRONMENT="Production"
+# ENV DOTNET_ENVIRONMENT="Production"
 
 # ENV CONNECTION_STRING="Server=database;Database=cdciweb;User=sa;Password=Password"
 
