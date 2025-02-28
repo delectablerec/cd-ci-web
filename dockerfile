@@ -33,7 +33,7 @@ ENV DOTNET_ENVIRONMENT="Production"
 
 # Evita problemi con le impostazioni di localizzazione nel container
 # 1 = Invariant, 0 = Current
-ENV DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=0
+# ENV DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=0
 
 # Definizione della variabile d'ambiente per il path del file json locale
 # ENV PRODOTTI_JSON_PATH=./wwwroot/data/prodotti.json
