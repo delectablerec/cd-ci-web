@@ -11,11 +11,11 @@ COPY *.csproj ./
 
 # RUN dotnet publish -c Release -o out --no-restore
 
-# oppure con restore assieme al run concatenato con &&
-RUN dotnet restore && dotnet publish -c Release -o out
-
 # 
 COPY . ./
+
+# oppure con restore assieme al run concatenato con &&
+RUN dotnet restore && dotnet publish -c Release -o out
 
 # Fase 2: Creazione dell'immagine finale leggera
 
