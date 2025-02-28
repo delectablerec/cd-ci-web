@@ -8,6 +8,10 @@ jobs:
   build:
     runs-on: ubuntu-latest  # Esegue il workflow su un runner Linux cioe una macchina virtuale che esegue i job
 
+  environment:
+    - PRODOTTI_JSON_PATH=/app/data/prodotti.json
+    - DOTNET_ENVIRONMENT=Production
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3  # Clona il repository GitHub

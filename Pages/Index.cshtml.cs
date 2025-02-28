@@ -16,6 +16,9 @@ public class IndexModel : PageModel
         // var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/data/prodotti.json");
         Ambiente = Environment.GetEnvironmentVariable("DOTNET_ENVIRONMENT");
 
+        Console.WriteLine($"PRODOTTI_JSON_PATH: {filePath}");
+        Console.WriteLine($"DOTNET_ENVIRONMENT: {Ambiente}");
+
         if (System.IO.File.Exists(filePath))
         {
             var json = await System.IO.File.ReadAllTextAsync(filePath);
