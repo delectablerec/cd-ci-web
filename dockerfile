@@ -32,15 +32,18 @@ ENV DOTNET_ENVIRONMENT="Production"
 # 1 = Invariant, 0 = Current
 ENV DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
 
+# Definizione della variabile d'ambiente per il path del file json locale
+ENV PRODOTTI_JSON_PATH=./wwwroot/data/prodotti.json
+
 # Definizione della variabile d'ambiente per il path del file json
-ENV PRODOTTI_JSON_PATH=wwwroot/data/prodotti.json
+ENV PRODOTTI_APP_PATH=/app/data/prodotti.json
 
 # Creazione della cartella per i files json
 # l attributo -p permette di creare anche le cartelle genitore cioe la cartella database
 RUN mkdir -p /app/data
 
 # copia il files json di esempio
-COPY PRODOTTI_JSON_PATH /app/data/prodotti.json
+COPY PRODOTTI_JSON_PATH PRODOTTI_APP_PATH
 
 # Definizione del volume per i files json
 VOLUME ["/app/data"]

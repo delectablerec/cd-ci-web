@@ -12,7 +12,7 @@ public class IndexModel : PageModel
 
     public async Task OnGet()
     {
-        filePath = Environment.GetEnvironmentVariable("PRODOTTI_JSON_PATH") ?? "wwwroot/data/prodotti.json";
+        filePath = Environment.GetEnvironmentVariable("PRODOTTI_JSON_PATH") ?? "./wwwroot/data/prodotti.json";
         // var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/data/prodotti.json");
         Ambiente = Environment.GetEnvironmentVariable("DOTNET_ENVIRONMENT");
 
