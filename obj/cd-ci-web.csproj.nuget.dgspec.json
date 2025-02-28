@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Allievo\\Documents\\cd-ci-web\\cd-ci-web.csproj": {}
+    "c:\\Users\\Allievo\\Documents\\cd-ci-web\\cd-ci-web.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Allievo\\Documents\\cd-ci-web\\cd-ci-web.csproj": {
+    "c:\\Users\\Allievo\\Documents\\cd-ci-web\\cd-ci-web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Allievo\\Documents\\cd-ci-web\\cd-ci-web.csproj",
+        "projectUniqueName": "c:\\Users\\Allievo\\Documents\\cd-ci-web\\cd-ci-web.csproj",
         "projectName": "cd-ci-web",
-        "projectPath": "C:\\Users\\Allievo\\Documents\\cd-ci-web\\cd-ci-web.csproj",
+        "projectPath": "c:\\Users\\Allievo\\Documents\\cd-ci-web\\cd-ci-web.csproj",
         "packagesPath": "C:\\Users\\Allievo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Allievo\\Documents\\cd-ci-web\\obj\\",
+        "outputPath": "c:\\Users\\Allievo\\Documents\\cd-ci-web\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Allievo\\AppData\\Roaming\\NuGet\\NuGet.Config"

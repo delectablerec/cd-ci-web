@@ -1,6 +1,9 @@
 ﻿@page
 @model IndexModel
 <h1>Lista Prodotti</h1>
+
+<p><strong>Ambiente:</strong> @Model.Environment</p>
+<p><strong>Percorso JSON:</strong> @Model.filePath</p>
 <ul>
     @foreach (var prodotto in Model.Prodotti)
     {
