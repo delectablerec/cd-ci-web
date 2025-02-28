@@ -6,11 +6,10 @@ on: # Definisce gli eventi che attivano il workflow
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # Esegue il workflow su un runner Linux cioe una macchina virtuale che esegue i job
-
-  environment:
-    - PRODOTTI_JSON_PATH=/app/data/prodotti.json
-    - DOTNET_ENVIRONMENT=Production
+    runs-on: ubuntu-latest  # Esegue il job su una macchina virtuale Linux
+    env:
+      PRODOTTI_JSON_PATH: /app/data/prodotti.json
+      DOTNET_ENVIRONMENT: Production
 
     steps:
       - name: Checkout repository
