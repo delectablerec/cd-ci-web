@@ -23,8 +23,19 @@ FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
 WORKDIR /app
 COPY --from=build app/out ./
 
+# Definizione della variabile d'ambiente per il fuso orario
 ENV TZ=Europe/Rome
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+# Imposta la cultura e la valuta per il sistema
+ENV DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=0
+RUN apt-get update && apt-get install -y locales && rm -rf /var/lib/apt/lists/*
+RUN locale-gen it_IT.UTF-8
+ENV LANG=it_IT.UTF-8
+ENV LC_ALL=it_IT.UTF-8
+
+# Imposta la valuta come EUR
+ENV DOTNET_CURRENCY="€"
 
 # Definizione della variabile d'ambiente per l'ambiente di esecuzione Development, Staging, Production
 ENV DOTNET_ENVIRONMENT="Production"
