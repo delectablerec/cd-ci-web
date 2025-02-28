@@ -40,7 +40,7 @@ ENV LC_ALL=it_IT.UTF-8
 ENV DOTNET_CURRENCY="€"
 
 # Scrive la data di build in un file
-RUN date -u +"%d-%m-%Y %H:%M:%S %Z" > /app/build_time.txt
+RUN date +"%d-%m-%Y %H:%M:%S %Z" > /app/build_time.txt
 
 # Definizione della variabile d'ambiente per l'ambiente di esecuzione Development, Staging, Production
 ENV DOTNET_ENVIRONMENT="Production"
