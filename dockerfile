@@ -10,10 +10,12 @@ ENV PRODOTTI_JSON_PATH=/app/data/prodotti.json
 # Definizione della variabile d'ambiente per l'ambiente di esecuzione Development, Staging, Production
 ENV DOTNET_ENVIRONMENT="Production"
 
-ENV CONNECTION_STRING="Server=database;Database=cdciweb;User=sa;Password=Password"
+# ENV CONNECTION_STRING="Server=database;Database=cdciweb;User=sa;Password=Password"
 
-# RUN dotnet restore
-COPY . ./
+# 
+# COPY . ./
+
+COPY --from=build /out .
 
 # ENV APP_DATA_PATH=/app/data
 
