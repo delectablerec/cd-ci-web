@@ -4,6 +4,14 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /app
 COPY *.csproj ./
 
+# Definizione della variabile d'ambiente per il path del file json
+ENV PRODOTTI_JSON_PATH=/app/data/prodotti.json
+
+# Definizione della variabile d'ambiente per l'ambiente di esecuzione Development, Staging, Production
+ENV DOTNET_ENVIRONMENT="Production"
+
+ENV CONNECTION_STRING="Server=database;Database=cdciweb;User=sa;Password=Password"
+
 # RUN dotnet restore
 COPY . ./
 
