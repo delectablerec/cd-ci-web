@@ -10,7 +10,8 @@ public class IndexModel : PageModel
 
     public async Task OnGet()
     {
-        var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/data/prodotti.json");
+        var filePath = Environment.GetEnvironmentVariable("PRODOTTI_JSON_PATH") ?? "wwwroot/data/prodotti.json";
+        // var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/data/prodotti.json");
         if (System.IO.File.Exists(filePath))
         {
             var json = await System.IO.File.ReadAllTextAsync(filePath);

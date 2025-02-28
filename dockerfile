@@ -7,6 +7,20 @@ COPY *.csproj ./
 # RUN dotnet restore
 COPY . ./
 
+# ENV APP_DATA_PATH=/app/data
+
+# Definizione della variabile d'ambiente per il path del file json
+ENV PRODOTTI_JSON_PATH=/app/data/prodotti.json
+
+# Definizione della variabile d'ambiente per l'ambiente di esecuzione Development, Staging, Production
+ENV DOTNET_ENVIRONMENT="Production"
+
+# ENV CONNECTION_STRING="Server=database;Database=cdciweb;User=sa;Password=Password"
+
+# Evita problemi con le impostazioni di localizzazione nel container
+# 1 = Invariant, 0 = Current
+ENV DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
+
 # RUN dotnet publish -c Release -o out --no-restore
 
 # oppure con restore assieme al run concatenato con &&
