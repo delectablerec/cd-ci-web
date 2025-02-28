@@ -4,18 +4,12 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /app
 COPY *.csproj ./
 
-# Definizione della variabile d'ambiente per il path del file json
-ENV PRODOTTI_JSON_PATH=/app/data/prodotti.json
-
-# Definizione della variabile d'ambiente per l'ambiente di esecuzione Development, Staging, Production
-ENV DOTNET_ENVIRONMENT="Production"
-
 # ENV CONNECTION_STRING="Server=database;Database=cdciweb;User=sa;Password=Password"
 
 # 
-# COPY . ./
+COPY . ./
 
-COPY --from=build /out .
+# COPY --from=build /out .
 
 # ENV APP_DATA_PATH=/app/data
 
@@ -41,6 +35,12 @@ RUN dotnet restore && dotnet publish -c Release -o out
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
 WORKDIR /app
 COPY --from=build app/out ./
+
+# Definizione della variabile d'ambiente per il path del file json
+ENV PRODOTTI_JSON_PATH=/app/data/prodotti.json
+
+# Definizione della variabile d'ambiente per l'ambiente di esecuzione Development, Staging, Production
+ENV DOTNET_ENVIRONMENT="Production"
 
 # Creazione della cartella per i files json
 # l attributo -p permette di creare anche le cartelle genitore cioe la cartella database
