@@ -24,9 +24,9 @@ public class IndexModel : PageModel
         Console.WriteLine($"DOTNET_ENVIRONMENT: {Ambiente}");
         Console.WriteLine($"Ultimo aggiornamento: {ultimoAggiornamento}");
 
-        if (System.IO.File.Exists(fileImage))
+        if (System.IO.File.Exists(fileLocal))
         {
-            var json = await System.IO.File.ReadAllTextAsync(fileImage);
+            var json = await System.IO.File.ReadAllTextAsync(fileLocal);
             Prodotti = JsonConvert.DeserializeObject<List<Prodotto>>(json) ?? new List<Prodotto>();
         }
     }
