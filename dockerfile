@@ -23,6 +23,9 @@ FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
 WORKDIR /app
 COPY --from=build app/out ./
 
+ENV TZ=Europe/Rome
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 # Definizione della variabile d'ambiente per l'ambiente di esecuzione Development, Staging, Production
 ENV DOTNET_ENVIRONMENT="Production"
 
@@ -33,7 +36,7 @@ ENV DOTNET_ENVIRONMENT="Production"
 ENV DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=0
 
 # Definizione della variabile d'ambiente per il path del file json locale
-ENV PRODOTTI_JSON_PATH=./wwwroot/data/prodotti.json
+# ENV PRODOTTI_JSON_PATH=./wwwroot/data/prodotti.json
 
 # Creazione della cartella per i files json
 # l attributo -p permette di creare anche le cartelle genitore cioe la cartella database
