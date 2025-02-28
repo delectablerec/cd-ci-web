@@ -20,9 +20,11 @@ public class IndexModel : PageModel
         fileLocal = Environment.GetEnvironmentVariable("PRODOTTI_JSON_PATH") ?? "./wwwroot/data/prodotti.json";
         fileImage = Environment.GetEnvironmentVariable("PRODOTTI_APP_PATH") ?? "Sconosciuto";
         Ambiente = Environment.GetEnvironmentVariable("DOTNET_ENVIRONMENT") ?? "Development";
+
         // ultimoAggiornamento = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
         string filePath = "/app/build_time.txt";
-        ultimoAggiornamento = System.IO.File.Exists(filePath) ? System.IO.File.ReadAllText(filePath).Trim() : "Data non disponibile";
+        ultimoAggiornamento = System.IO.File.Exists(filePath) ? System.IO.File.ReadAllText(filePath).Trim() : DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+
         formatoValuta = Environment.GetEnvironmentVariable("DOTNET_CURRENCY") ?? "EUR";
         fusoOrario = Environment.GetEnvironmentVariable("TZ") ?? "Europe/Rome";
         
