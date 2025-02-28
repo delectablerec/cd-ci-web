@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
-using System.Globalization;
+using System.Globalization; // using System.Globalization;
 
 public class IndexModel : PageModel
 {
@@ -20,16 +20,18 @@ public class IndexModel : PageModel
         fileLocal = Environment.GetEnvironmentVariable("PRODOTTI_JSON_PATH") ?? "./wwwroot/data/prodotti.json";
         fileImage = Environment.GetEnvironmentVariable("PRODOTTI_APP_PATH") ?? "Sconosciuto";
         Ambiente = Environment.GetEnvironmentVariable("DOTNET_ENVIRONMENT") ?? "Development";
-        ultimoAggiornamento = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+        // ultimoAggiornamento = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+        string filePath = "/app/build_time.txt";
+        ultimoAggiornamento = System.IO.File.Exists(filePath) ? System.IO.File.ReadAllText(filePath).Trim() : "Data non disponibile";
         formatoValuta = Environment.GetEnvironmentVariable("DOTNET_CURRENCY") ?? "EUR";
         fusoOrario = Environment.GetEnvironmentVariable("TZ") ?? "Europe/Rome";
         
-        var cultura = new CultureInfo("it-IT")
+        var cultura = new CultureInfo("it-IT") // imposto la cultura italiana
         {
-            NumberFormat = { CurrencySymbol = formatoValuta }
+            NumberFormat = { CurrencySymbol = formatoValuta } // imposto il simbolo della valuta
         };
-        CultureInfo.DefaultThreadCurrentCulture = cultura;
-        CultureInfo.DefaultThreadCurrentUICulture = cultura;
+        CultureInfo.DefaultThreadCurrentCulture = cultura; // imposto la cultura corrente per i numeri
+        CultureInfo.DefaultThreadCurrentUICulture = cultura; // imposto la cultura corrente per le stringhe
 
         Console.WriteLine($"PRODOTTI_JSON_PATH: {fileImage}");
         Console.WriteLine($"PRODOTTI_APP_PATH: {fileLocal}");
