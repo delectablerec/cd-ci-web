@@ -2,11 +2,12 @@
 @model IndexModel
 <h1>Lista Prodotti</h1>
 
-<p><strong>Ambiente:</strong> @Model.Ambiente</p>
-<p><strong>Percorso JSON:</strong> @Model.filePath</p>
 <ul>
     @foreach (var prodotto in Model.Prodotti)
     {
-        <li>@prodotto.Nome - €@prodotto.Prezzo</li>
+        <li>@prodotto.Id - @prodotto.Nome - €@prodotto.Prezzo</li>
     }
 </ul>
+
+<p><strong>Ambiente:</strong> @Model.Ambiente</p>
+<p><strong>JSON:</strong> @Model.filePath</p>
