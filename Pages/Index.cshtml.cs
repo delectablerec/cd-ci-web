@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 public class IndexModel : PageModel
 {
     public List<Prodotto> Prodotti { get; set; } = new();
-    public string? Environment { get; set; }
+    public string? Ambiente { get; set; }
     public string? filePath { get; set; }
 
     public async Task OnGet()
     {
         filePath = Environment.GetEnvironmentVariable("PRODOTTI_JSON_PATH") ?? "wwwroot/data/prodotti.json";
         // var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/data/prodotti.json");
-        Environment = Environment.GetEnvironmentVariable("DOTNET_ENVIRONMENT");
+        Ambiente = Environment.GetEnvironmentVariable("DOTNET_ENVIRONMENT");
 
         if (System.IO.File.Exists(filePath))
         {
