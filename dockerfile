@@ -40,7 +40,7 @@ ENV PRODOTTI_JSON_PATH=./wwwroot/data/prodotti.json
 RUN mkdir -p /app/data
 
 # Definizione della variabile d'ambiente per il path del file json
-ENV PRODOTTI_APP_PATH=/app/data
+ENV PRODOTTI_APP_PATH=/app/data/prodotti.json
 
 # copia il files json di esempio
 COPY ./wwwroot/data/prodotti.json /app/data/prodotti.json

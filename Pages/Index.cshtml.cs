@@ -8,20 +8,25 @@ public class IndexModel : PageModel
 {
     public List<Prodotto> Prodotti { get; set; } = new();
     public string? Ambiente { get; set; }
-    public string? filePath { get; set; }
+    public string? fileLocal { get; set; }
+    public string? fileImage { get; set; }
+    public string? ultimoAggiornamento { get; set; }
 
     public async Task OnGet()
     {
-        filePath = Environment.GetEnvironmentVariable("PRODOTTI_JSON_PATH") ?? "./wwwroot/data/prodotti.json";
-        // var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/data/prodotti.json");
-        Ambiente = Environment.GetEnvironmentVariable("DOTNET_ENVIRONMENT");
+        fileLocal = Environment.GetEnvironmentVariable("PRODOTTI_JSON_PATH") ?? "./wwwroot/data/prodotti.json";
+        fileImage = Environment.GetEnvironmentVariable("PRODOTTI_APP_PATH") ?? "/app/data/prodotti.json";
+        Ambiente = Environment.GetEnvironmentVariable("DOTNET_ENVIRONMENT") ?? "Development";
+        ultimoAggiornamento = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
 
-        Console.WriteLine($"PRODOTTI_JSON_PATH: {filePath}");
+        Console.WriteLine($"PRODOTTI_JSON_PATH: {fileImage}");
+        Console.WriteLine($"PRODOTTI_APP_PATH: {fileLocal}");
         Console.WriteLine($"DOTNET_ENVIRONMENT: {Ambiente}");
+        Console.WriteLine($"Ultimo aggiornamento: {ultimoAggiornamento}");
 
-        if (System.IO.File.Exists(filePath))
+        if (System.IO.File.Exists(fileImage))
         {
-            var json = await System.IO.File.ReadAllTextAsync(filePath);
+            var json = await System.IO.File.ReadAllTextAsync(fileImage);
             Prodotti = JsonConvert.DeserializeObject<List<Prodotto>>(json) ?? new List<Prodotto>();
         }
     }
